@@ -14,5 +14,7 @@ data class Movies(
     val season: Int,
     val summary: String,
     val type: String,
+    val premiered: String,
+    val genres: List<String>,
     val url: String
 )
