@@ -3,6 +3,7 @@ package com.example.movies_app
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.movies_app.navigation.SetupNavHost
 import com.example.movies_app.ui.theme.Movies_AppTheme
@@ -15,7 +16,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             Movies_AppTheme {
                 val navController = rememberNavController()
-                SetupNavHost(navController = navController)
+                val viewModel = hiltViewModel<MainViewModel>()
+                SetupNavHost(navController = navController,viewModel)
             }
         }
     }
